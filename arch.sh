@@ -1,15 +1,15 @@
 #!/bin/bash
 
-#####	NAME:				Arch install
+#####	NAME:				Arch Install
 #####	VERSION:			0.1
 #####	DESCRIPTION:		Script Instalacao Arch Linux
 #####	DATE OF CREATION:	07/07/2020
-#####	WRITTEN BY:			KARAN LUCIANO SILVA | JACKSON DURAES
+#####	WRITTEN BY:			KARAN LUCIANO SILVA 
 #####	E-MAIL:				karanluciano1@gmail.com			
 #####	DISTRO:				MANJARO LINUX
 #####	LICENSE:			GPLv3 			
 #####	PROJECT:			https://github.com/lkaranl/Arch_Scipt
-##
+
 pac(){
 	mkfs.ext4 /dev/sda1
 	mkswap /dev/sda2
@@ -37,10 +37,10 @@ conf(){
 	echo -e "[multilib]\nInclude = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
 	curl -O https://download.sublimetext.com/sublimehq-pub.gpg && pacman-key --add sublimehq-pub.gpg && pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
 	echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | tee -a /etc/pacman.conf
-	pacman -Syu --noconfir
 }
 
 xorg(){
+	pacman -Sy --noconfir
 	pacman -S reflector --noconfirm
 	reflector --verbose --latest 5 --sort rate --save /etc/pacman.d/mirrorlist
 	pacman -Sy --noconfir
@@ -62,14 +62,6 @@ xorg(){
 
 pos(){
 	pacman -S samba geany dmenu git wget firefox thunar gnome-calculator pavucontrol xfce4-screenshooter rxvt-unicode ttf-font-awesome lxappearance yad xdotool vim nano gparted neofetch qbittorrent lightdm-gtk-greeter-settings ffmpeg vlc zenity noto-fonts-emoji texstudio spyder redshift gimp libreoffice-fresh libreoffice-fresh-pt-br texlive-publishers texlive-latexextra python-sympy audacity feh pulseaudio sublime-text --noconfirm
-}
-
-
-auto(){
-	disk
-	pac
-	conf
-	pre
 }
 
 case $1 in

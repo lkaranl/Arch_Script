@@ -88,11 +88,11 @@ case $1 in
 		;;
 	"--conf") conf
 		;;	
-	"--xorg") pre
+	"--xorg") xorg
 		;;	
 	*) cat <<EOF
 		
-		Instalador Arch Linux personalizado para mim
+	*** Instalador Arch Linux personalizado para mim ***
 
 	--pac, Faz o pacstrap e o arch-chroot
 
@@ -101,6 +101,7 @@ case $1 in
 	--xorg, Instala o Grub, Xorg e i3wm, usuario e senha
 
 	--pos, Instala os softwares
+
 EOF
 		exit 1
 		;;

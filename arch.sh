@@ -62,6 +62,12 @@ xorg(){
 
 pos(){
 	pacman -S samba geany dmenu git wget firefox thunar gnome-calculator pavucontrol xfce4-screenshooter rxvt-unicode ttf-font-awesome lxappearance yad xdotool vim nano gparted neofetch qbittorrent lightdm-gtk-greeter-settings ffmpeg vlc zenity noto-fonts-emoji texstudio spyder redshift gimp libreoffice-fresh libreoffice-fresh-pt-br texlive-publishers texlive-latexextra python-sympy audacity feh pulseaudio sublime-text --noconfirm
+
+	wget 
+
+	mkdir -r /home/karan/Imagens/Wallpapers/
+	wget https://github.com/lkaranl/Arch_Script/blob/master/Wallpaper/i3.png -o /home/karan/Imagens/Wallpapers/i3.png
+
 }
 
 case $1 in

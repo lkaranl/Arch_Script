@@ -62,12 +62,13 @@ xorg(){
 
 pos(){
 	#pacman -S samba geany dmenu git wget fish xed firefox thunar gnome-calculator pavucontrol xfce4-screenshooter rxvt-unicode ttf-font-awesome lxappearance yad xdotool vim nano gparted neofetch qbittorrent lightdm-gtk-greeter-settings ffmpeg vlc zenity noto-fonts-emoji texstudio spyder redshift gimp libreoffice-fresh libreoffice-fresh-pt-br texlive-publishers texlive-latexextra python-sympy audacity feh pulseaudio sublime-text --noconfirm
-	
+
 	mkdir -p /home/karan/Imagens/Wallpapers/
+	mkdir -p /home/karan/.config/i3
 	
-	cp config/i3.png /home/karan/Imagens/Wallpapers/i3.png
-	cp config/.Xresources /home/karan/.Xresources
-	cp config/config/i3/config /home/karan/.config/i3/config
+	cp Wallpaper/i3.png /home/karan/Imagens/Wallpapers/i3.png
+	cp config/Xresources /home/karan/.Xresources
+	cp config/i3/config /home/karan/.config/i3/config
 }
 
 case $1 in

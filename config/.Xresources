@@ -1,0 +1,16 @@
+! special colors
+*.foreground:  #bfc3bc
+*.background:  #2d3335
+*.cursorColor:  #bfc3bc
+
+URxvt*scrollBar:         false
+URxvt*scrollBar_right:   false
+
+URxvt*transparent:       true
+URxvt*shading:       10
+
+URxvt.font: xft:Source Code Pro Medium:pixelsize=18
+URxvt.letterSpace: 0
+
+*antialias:  true
+*autohint:   true

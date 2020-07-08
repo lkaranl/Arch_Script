@@ -10,6 +10,8 @@
 #####	LICENSE:			GPLv3 			
 #####	PROJECT:			https://github.com/lkaranl/Arch_Scipt
 
+_home=$(pdw)
+
 pac(){
 	mkfs.ext4 /dev/sda1
 	mkswap /dev/sda2
@@ -61,14 +63,22 @@ xorg(){
 }
 
 pos(){
-	#pacman -S samba geany dmenu git wget fish xed firefox thunar gnome-calculator pavucontrol xfce4-screenshooter rxvt-unicode ttf-font-awesome lxappearance yad xdotool vim nano gparted neofetch qbittorrent lightdm-gtk-greeter-settings ffmpeg vlc zenity noto-fonts-emoji texstudio spyder redshift gimp libreoffice-fresh libreoffice-fresh-pt-br texlive-publishers texlive-latexextra python-sympy audacity feh pulseaudio sublime-text --noconfirm
+	pacman -S samba geany dmenu git wget fish xed clang gcc cmake firefox thunar gnome-calculator pavucontrol xfce4-screenshooter rxvt-unicode ttf-font-awesome lxappearance yad xdotool vim nano gparted neofetch qbittorrent lightdm-gtk-greeter-settings ffmpeg vlc zenity noto-fonts-emoji texstudio spyder redshift gimp libreoffice-fresh libreoffice-fresh-pt-br texlive-publishers texlive-latexextra python-sympy audacity feh pulseaudio sublime-text --noconfirm
 
-	mkdir -p /home/karan/Imagens/Wallpapers/
-	mkdir -p /home/karan/.config/i3
+	mkdir -p $HOME/Imagens/Wallpapers/
+	mkdir -p $HOME/.config/i3
 	
-	cp Wallpaper/i3.png /home/karan/Imagens/Wallpapers/i3.png
-	cp config/Xresources /home/karan/.Xresources
-	cp config/i3/config /home/karan/.config/i3/config
+	cp Wallpaper/i3.png $HOME/Imagens/Wallpapers/i3.png
+	cp config/Xresources $HOME/.Xresources
+	cp config/i3/config $HOME/.config/i3/config
+
+	##Nao pode ser root
+	# git clone https://aur.archlinux.org/polybar.git
+	# cd polybar
+	# makepkg -si
+	# cd ..
+	# cp config/polybar/config $HOME/.config/polybar/config
+	# cp -R config/polybar/Scripts $HOME/.config/polybar
 }
 
 case $1 in

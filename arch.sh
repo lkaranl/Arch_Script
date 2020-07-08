@@ -48,7 +48,7 @@ xorg(){
 	pacman -Sy --noconfir
 	pacman -S xorg xorg-server xorg-xinit xorg-apps xorg-twm xorg-xclock xterm xf86-video-vesa --noconfirm 	
 	pacman -S networkmanager lightdm lightdm-gtk-greeter --noconfirm
-	pacman -S wireless_tools wpa_supplicant dialog acpi acpid --noconfirm
+	pacman -S wireless_tools wpa_supplicant dialog acpi acpid sudo --noconfirm
 	pacman -S alsa-utils ttf-dejavu i3-wm i3lock i3status i3-gaps --noconfirm
 	pacman -S grub --noconfirm
 	systemctl enable NetworkManager.service

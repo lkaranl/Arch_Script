@@ -10,8 +10,6 @@
 #####	LICENSE:			GPLv3 			
 #####	PROJECT:			https://github.com/lkaranl/Arch_Scipt
 
-_home=$(pdw)
-
 pac(){
 	mkfs.ext4 /dev/sda1
 	mkswap /dev/sda2
@@ -54,20 +52,22 @@ xorg(){
 	systemctl enable NetworkManager.service
 	systemctl enable lightdm.service
 	grub-install /dev/sda
-	grub-mkconfig -o /boot/grub/grub.cfg		
-	useradd -m -g users -G storage,power,wheel,audio,video -s /bin/bash karan
-	echo "Senha karan"
-	passwd karan
+	grub-mkconfig -o /boot/grub/grub.cfg
+	echo "Qual o seu usuario: "
+	read _user
+	useradd -m -g users -G storage,power,wheel,audio,video -s /bin/bash $_user
+	echo "Senha do usuario $_user"
+	passwd $_user
 	echo -e "\nSenha root"
 	passwd
+	echo -e "$_user ALL=(ALL) ALL" >> /etc/sudoers
 }
 
 pos(){
-	pacman -S samba geany dmenu git wget fish xed clang gcc cmake firefox thunar gnome-calculator pavucontrol xfce4-screenshooter rxvt-unicode ttf-font-awesome lxappearance yad xdotool vim nano gparted neofetch qbittorrent lightdm-gtk-greeter-settings ffmpeg vlc zenity noto-fonts-emoji texstudio spyder redshift gimp libreoffice-fresh libreoffice-fresh-pt-br texlive-publishers texlive-latexextra python-sympy audacity feh pulseaudio sublime-text --noconfirm
+	sudo pacman -S samba geany dmenu git wget fish xed clang gcc cmake firefox thunar gnome-calculator pavucontrol xfce4-screenshooter rxvt-unicode ttf-font-awesome lxappearance yad xdotool vim nano gparted neofetch qbittorrent lightdm-gtk-greeter-settings ffmpeg vlc zenity noto-fonts-emoji texstudio spyder redshift gimp libreoffice-fresh libreoffice-fresh-pt-br texlive-publishers texlive-latexextra python-sympy audacity feh pulseaudio sublime-text --noconfirm
 
 	mkdir -p $HOME/Imagens/Wallpapers/
 	mkdir -p $HOME/.config/i3
-	
 	cp Wallpaper/i3.png $HOME/Imagens/Wallpapers/i3.png
 	cp config/Xresources $HOME/.Xresources
 	cp config/i3/config $HOME/.config/i3/config

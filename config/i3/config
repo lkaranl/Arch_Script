@@ -234,7 +234,7 @@ bindsym $mod+r mode "resize"
 #
 exec --no-startup-id polybar -r karanbar
 exec --no-startup-id xrdb .Xresources
-exec --no-startup-id feh --bg-scale /home/karan/Imagens/Wallpapers/i3.png
+exec --no-startup-id feh --bg-scale $HOME/Imagens/Wallpapers/i3.png
 		     
 #exec --no-startup-id exec xcompmgr -Cc
 #exec --no-startup-id exec 

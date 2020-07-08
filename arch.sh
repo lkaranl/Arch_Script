@@ -1,5 +1,8 @@
 #!/bin/bash
 
+
+# LEMBRAR DE EDITAR O I3 CONFIG PARA $home 
+
 #####	NAME:				Arch Install
 #####	VERSION:			0.1
 #####	DESCRIPTION:		Script Instalacao Arch Linux
